@@ -5,7 +5,7 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      git testing
+      git merge testing 
     </div>
   );
 }
