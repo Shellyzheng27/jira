@@ -2,19 +2,31 @@
     "users": [
         {
             "id": 1,
-            "name": "Jack"
+            "name": "Jack",
+            "email": "123@gmail.com",
+            "title": "Driver Manager",
+            "organization": "Deliveray Department"
         },
         {
             "id": 2,
-            "name": "Lee"
+            "name": "Lee",
+            "email": "456@gmail.com",
+            "title": "Marketing Manager",
+            "organization": "Group buy Department"
         },
         {
             "id": 3,
-            "name": "William"
+            "name": "William",
+            "email": "789@gmail.com",
+            "title": "Marketing specialist",
+            "organization": "Group buy Department"
         },
         {
             "id": 4,
-            "name": "Tom"
+            "name": "Tom",
+            "email": "101@gmail.com",
+            "title": "Administration Manager",
+            "organization": "Administration Department"
         }
     ],
     "projects": [
