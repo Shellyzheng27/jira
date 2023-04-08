@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export const isFalsy = (value: any) => value === 0 ? false : ! value
+export const isFalsy = (value: unknown) => value === 0 ? false : ! value
 
 export const cleanObject = (object: object) => {
     // ...object = Object.assign({}, object)
@@ -38,7 +38,7 @@ export const useMount = (callback: () => void) => {
 // log()
 // log()
 
-export const useDebounce = (value: any, delay?: number) => {
+export const useDebounce = <v>(value: v, delay?: number) => {
     // 每次在Value变化后，设置一个定时器
     const [debouncedValue, setDebouncedValue] = useState(value)
     // 每次在上一个useEffect处理完后再运行
