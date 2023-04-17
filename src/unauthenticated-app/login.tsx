@@ -15,11 +15,6 @@ export const LoginScreen = () => {
         login({username, password})
     }
     return <form onSubmit={handleSubmit}>
-        {
-            user ? <div>
-                Successfully login: {user?.name}   
-            </div> : null
-        }
         <div>
             <label htmlFor="username">Username: </label>
             <input type="text" id={'username'}/>
@@ -28,6 +23,6 @@ export const LoginScreen = () => {
             <label htmlFor="password">Password: </label>
             <input type="password" id={"password"}></input>
         </div>
-        <button type={"submit"}>login</button>
+        <button type={"submit"}>log in</button>
     </form>
 }
