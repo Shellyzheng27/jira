@@ -15,8 +15,7 @@ loadDevTools(() => root.render(
       <App />
     </AppProviders>
   </React.StrictMode>
-)
-);
+))
 
 
 
