@@ -3,8 +3,11 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { loadDevTools } from 'jira-dev-tool'
+import { loadDevTools } from 'jira-dev-tool';
+// antd 需要在jira-dev-tool中引入
+import '../node_modules/jira-dev-tool/node_modules/antd/dist/antd' 
 import { AppProviders } from 'context';
+
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

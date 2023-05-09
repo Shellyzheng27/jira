@@ -1,13 +1,16 @@
-import React, { useState } from "react"
-import { RegisterScreen } from "./register"
-import { LoginScreen } from "./login"
+import React, { useState } from "react";
+import { RegisterScreen } from "./register";
+import { LoginScreen } from "./login";
+import { Card } from "antd"
 
 export const UnauthenticatedApp = () => {
     const [isRegister, setIsRegister] = useState(false)
-    return <div>
+    return <div style={{display:'flex', justifyContent:'center'}}>
+        <Card>
         {
             isRegister ? <RegisterScreen/> : <LoginScreen/>
         }
         <button onClick={() => setIsRegister(!isRegister)}>Switch to {isRegister? "Log in":"Sign up"}</button>
+        </Card>
     </div>
 }
