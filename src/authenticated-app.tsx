@@ -2,56 +2,37 @@ import React from "react";
 import { ProjectListScreen } from "screens/project-list";
 import { useAuth } from "context/auth-context";
 import styled from '@emotion/styled';
+import { Row } from './components/lib';
 
 export const AutheticatedApp = () => {
     const {logout} = useAuth();
     return (
     <Container>
-        <Header>
-            <HeaderLeft>
-                <h3>Logo</h3>
-                <h3>Project</h3>
-                <h3>User</h3>
+        <Header between = {true}>
+            <HeaderLeft gap = {true}>
+                <h2>Logo</h2>
+                <h2>Project</h2>
+                <h2>User</h2>
             </HeaderLeft>
             <HeaderRight>
                 <button onClick={logout}>Log out</button>
             </HeaderRight>
         </Header>
-        <Nav>Nav</Nav>
         <Main>
            <ProjectListScreen/> 
         </Main>
-        <Aside>aside</Aside>
-        <Footer>footer</Footer>
     </Container>
     );
 };
 
+const HeaderItem = styled.h3`margin-right: 3rem`
+
 const Container =styled.div`
-    display: grid;
-    grid-template-rows: 6rem 1fr 3rem;
-    grid-template-columns: 20rem 1fr 20rem;
-    grid-template-areas: 
-    "h h h"
-    "n m a"
-    "f f f";
     height: 100vh;
-    grid-gap: 3rem;
-`
+    `
 // grid-area 用于给grid子元素命名
-const Header = styled.header`
-grid-area: h;
-display: flex;
-flex-direction: row;
-align-items: center;
-justify-content: space-between;
-`
-const HeaderLeft = styled.div`
-display:flex;
-align-items: center;
-`
+/* 下面的Row 在lib.tsx 中同过自定义的方式构建出所需的argument */
+const Header = styled(Row)``
+const HeaderLeft = styled(Row)``
 const HeaderRight = styled.div``
 const Main = styled.main`grid-area: m`
-const Nav = styled.nav`grid-area: n`
-const Aside = styled.aside`grid-area: a`
-const Footer = styled.footer`grid-area: f`
