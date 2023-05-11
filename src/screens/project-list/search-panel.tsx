@@ -1,6 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import { Select, Input } from "antd";
+import { Select, Input, Form } from "antd";
 
 export interface User{
     id: string;
@@ -20,14 +20,25 @@ interface SearchPanelProps {
 }
 export const SearchPanel = ({users, param, setParam}: SearchPanelProps) => {
 
-    return <form>
-        <div>
+    // 可用 css={{marginBottom:'2rem'}} (emotion行内样式) 替代下行中的 style={{marginBottom:'2rem'}} 
+    // 来规避react自带的行内样式的不足，需添加以下引入代码来支持使用
+    // /** @js jsx */
+    // import {jsx} from '@emotion/react"
+    return <Form style={{marginBottom:'2rem'}} layout={"inline"}>
+        <Form.Item>
             {/* setParam(Object.assign({}, param, {name:evt.target.value})) */}
-        <Input type="text" value={param.name} onChange={evt => setParam({
+        <Input 
+        placeholder={"Project name"}
+        type="text" 
+        value={param.name} 
+        onChange={evt => setParam({
             ...param,
             name: evt.target.value
         })} />
-        <Select value={param.personId} 
+        </Form.Item>
+        <Form.Item>
+        <Select 
+        value={param.personId} 
         onChange={value => setParam ({
             ...param,
             personId: value
@@ -39,6 +50,6 @@ export const SearchPanel = ({users, param, setParam}: SearchPanelProps) => {
                 </Select.Option>
                 ))}
         </Select>
-        </div>
-    </form>
+        </Form.Item>
+    </Form>
 }
